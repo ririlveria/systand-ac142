@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2015 at 05:47 AM
+-- Generation Time: Dec 14, 2015 at 06:17 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -39,6 +39,21 @@ CREATE TABLE IF NOT EXISTS `section` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `subject`
+--
+
+CREATE TABLE IF NOT EXISTS `subject` (
+  `id` int(11) NOT NULL,
+  `subject_name` varchar(45) NOT NULL,
+  `category` varchar(25) NOT NULL,
+  `status` varchar(10) NOT NULL,
+  `yearlevel_id` int(11) NOT NULL,
+  `units` decimal(3,1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `yearlevel`
 --
 
@@ -60,6 +75,12 @@ ALTER TABLE `section`
   ADD PRIMARY KEY (`id`), ADD KEY `yearlevel_id` (`yearlevel_id`);
 
 --
+-- Indexes for table `subject`
+--
+ALTER TABLE `subject`
+  ADD PRIMARY KEY (`id`), ADD KEY `yearlevel_id` (`yearlevel_id`);
+
+--
 -- Indexes for table `yearlevel`
 --
 ALTER TABLE `yearlevel`
@@ -73,6 +94,11 @@ ALTER TABLE `yearlevel`
 -- AUTO_INCREMENT for table `section`
 --
 ALTER TABLE `section`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `subject`
+--
+ALTER TABLE `subject`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `yearlevel`
