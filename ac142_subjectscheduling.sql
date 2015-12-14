@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2015 at 05:31 AM
+-- Generation Time: Dec 14, 2015 at 05:37 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `subject_scheduling`
+-- Database: `subjects_scheduling`
 --
 
 -- --------------------------------------------------------
@@ -34,6 +34,19 @@ CREATE TABLE IF NOT EXISTS `section` (
   `status` varchar(15) NOT NULL,
   `yearlevel_id` int(11) NOT NULL,
   `section_group_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `yearlevel`
+--
+
+CREATE TABLE IF NOT EXISTS `yearlevel` (
+  `id` int(11) NOT NULL,
+  `yearlevel` varchar(20) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `order` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
